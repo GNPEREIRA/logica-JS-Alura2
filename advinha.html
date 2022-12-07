@@ -1,0 +1,32 @@
+<meta charset="UTF-8">
+
+<h1 align="center">Tente me vencer</h1>
+
+<h3>Informe um número de 0 a 10</h3>
+
+<input/>
+<br><br>
+<button align="center">Clique</button>
+
+<script>
+	var input = document.querySelector("input");
+	var button = document.querySelector("button");
+	input.focus();
+
+	function verificar(){
+		var segredo = Math.round(Math.random() * 10);
+
+		if(segredo == input.value){
+			alert("Acertou!");
+		}else{
+			alert("Errou! O número era " + segredo);
+		}
+
+		input.value = "";
+		input.focus();
+	}
+	
+	button.onclick = verificar;
+
+
+</script>

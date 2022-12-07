@@ -1,0 +1,43 @@
+<meta charset="utf-8">
+
+<script>
+
+var numPensado; 
+var numChute;
+
+function pulo(){
+	document.write("<br><br>");
+}
+
+function escreve(msg){
+	document.write(msg);
+	pulo();
+}
+
+function sorteia(){
+	numPensado = Math.round(Math.random() * 10);
+	return numPensado;
+}
+
+function analisar(){
+	if(numPensado == numChute){
+		alert("Acertou miseravi!!!");
+	}else if(numChute < numPensado){
+		alert("Meu número é maior que o seu!" + numPensado);
+	}else{
+		alert("Meu número é menor que o seu!" + numPensado);
+	}
+}
+
+sorteia();
+console.log(numPensado);
+
+numChute = parseInt(prompt("Digite seu chute: "));
+
+analisar();
+
+while(numPensado != numChute){
+	numChute = parseInt(prompt("Digite seu chute: "));
+	analisar();
+}
+</script>
